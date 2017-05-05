@@ -361,9 +361,18 @@ int send_data_command(uint8_t *packet,int data_len,uint8_t seq)
 	
 	
 	
-	if(data_len != 0x4000)
+	if((data_len < 0x4000) && (data_len > 0x400))
 	{
 		send_data[3] = 0x30;
+		send_data[9] = 0x30;
+		send_data[12] = 0x3f;
+	}
+	else if(data_len < 0x400)
+	{
+		send_data[2] = 0x0f;
+		send_data[3] = 0x10;
+		send_data[8] = 0xff;
+		send_data[9] = 0x0f;
 	}
 	send_data[12] = seq;
 	send_data[4] = chexksum(packet,data_len);
@@ -388,5 +397,30 @@ int send_data_command(uint8_t *packet,int data_len,uint8_t seq)
 	return 1;
 }
 
+int download_start(void)
+{
+	uint8_t i = 0;
+	uint8_t ret = 1;
+	
+	ret = device_sync();
+	
+	if(ret)
+	{
+		ret = run_stub();
+	}
+	
+	if(ret)
+	{
+		ret = Change_baud_command();
+	}
+	
+	if(ret)
+	{
+		for(i=0;i<3;i++)
+		{
+			
+		}
+	}
+}
 
 

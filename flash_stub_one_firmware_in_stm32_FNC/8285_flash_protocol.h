@@ -434,3 +434,18 @@ uint8_t stub_data[792] = {
 	0x00,0x10,0x11,0x12,0x00,0x08,0x07,0x09,0x06,0x0a,0x05,0x0b,0x04,0x0c,0x03,0x0d,0x02,0x0e,0x01,0x0f,0x00,
 	0x01,0x01,0x00,0x00,0x01,0x00,0x00,0x00,0x04,0x00,0x00,0x00
 };
+
+void Data_formatt_write(uint8_t *packet,int packet_len,uint8_t packet_type);
+int Data_formatt_read(uint8_t *packet,int len);
+int device_sync(void);
+int Change_baud_command(void);
+int Erasing_data_command(int file_type);
+int stub_mem_finish(void);
+int stub_mem_begin(uint8_t type);
+int stub_mem_block(uint8_t type);
+int run_stub(void);
+uint8_t checksum(uint8_t *data,int data_len);
+int send_data_command(uint8_t *packet,int data_len,uint8_t seq);
+int download_start(void);
+
+#endif
