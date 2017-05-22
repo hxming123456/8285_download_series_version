@@ -1,1 +1,0 @@
-python flash_stub_one_fireware_FNC.py "COM32" "E:\\project\\flash_download_tool_python2.6-2.7_wxpython3.0_release_v2.4_SOURCE\\flash_stub_one_firmware_FNC\\flash_stub_one_firmware_FC_1.0\\FWSW-01-test.bin"
