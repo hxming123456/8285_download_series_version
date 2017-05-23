@@ -54,8 +54,8 @@ class FlashUI(wx.Frame):
         self.load_data_flag = 0
 
         self.now_time = datetime.now().strftime('%Y_%m_%d_%H%M%S_')
-        self.f_note = open('D:\\flash_stub_one_firmware_FNC_tool\\log\\'+self.now_time+'.txt','a')
-        self.file_name = 'D:\\flash_stub_one_firmware_FNC_tool\\log\\'+self.now_time
+        self.f_note = open('D:\\flash_one_firmware_hadata_tool\\log\\'+self.now_time+'.txt','a')
+        self.file_name = 'D:\\flash_one_firmware_hadata_tool\\log\\'+self.now_time
 
         self.sync_flag = 0
 
